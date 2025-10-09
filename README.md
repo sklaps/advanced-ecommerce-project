@@ -211,9 +211,8 @@ It helps identify **VIPs**, **loyal customers**, and **churn risks**.
 ### 🧮 SQL Query Used
 
 ```sql
-
 WITH purchases AS (
-    SELECT user_id,
+SELECT user_id,
            COUNT(*) AS frequency,
            SUM(price) AS monetary,
            TIMESTAMPDIFF(HOUR, MAX(event_time), (SELECT MAX(event_time) FROM new_project.small_file)) AS recency_hours
