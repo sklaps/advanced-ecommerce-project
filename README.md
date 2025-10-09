@@ -121,7 +121,7 @@ Only ~1.6% of views lead to purchases → potential for funnel improvement.
 
 Marketing teams can target high-view, low-purchase categories to increase conversion.
 
-**Q2. What percent of users move from viewing → cart → purchasing?**********
+###Q2. What percent of users move from viewing → cart → purchasing?
 
 SELECT 
     (SELECT COUNT(DISTINCT user_id) FROM new_project.small_file WHERE event_type='view') AS total_views,
@@ -266,6 +266,30 @@ LIMIT 100;
 
 ---
 
-📈 *These findings demonstrate how SQL-driven data analysis can guide real business decisions — from marketing timing to customer retention and pricing strategy.*
+📈 *These findings demonstrate how SQL-driven data analysis can guide real business decisions — from marketing timing to customer retention and pricing strategy.
+
+## 🧱 How to Reproduce This Project
+
+You can recreate this entire analysis on your own system with MySQL and Excel.
+
+### 🪜 Steps
+
+1. **Download the dataset:**  
+   Kaggle → *eCommerce Behavior Data from Multi Category Store*  
+   Extract the ZIP and use a sample file (e.g., `2019-Oct.csv` or `small_file.csv`).
+
+2. **Import into MySQL:**
+   ```sql
+   CREATE DATABASE new_project;
+   USE new_project;
+   LOAD DATA INFILE 'path_to_file/small_file.csv'
+   INTO TABLE small_file
+   FIELDS TERMINATED BY ','
+   IGNORE 1 ROWS;
+3.** Run the SQL queries from ecommerce_project.sql
+to reproduce each analysis (Q1–Q5 and RFM).
+4. **Export results to Excel and build the charts (see charts/ folder for references).
+Optional:
+5** Create a Power BI dashboard or Tableau visual for bonus visualization practice
 
 
