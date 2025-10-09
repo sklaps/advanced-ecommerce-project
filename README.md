@@ -211,6 +211,7 @@ It helps identify **VIPs**, **loyal customers**, and **churn risks**.
 ### 🧮 SQL Query Used
 
 ```sql
+
 WITH purchases AS (
     SELECT user_id,
            COUNT(*) AS frequency,
@@ -291,5 +292,22 @@ to reproduce each analysis (Q1–Q5 and RFM).
 4. **Export results to Excel and build the charts (see charts/ folder for references).
 Optional:
 5** Create a Power BI dashboard or Tableau visual for bonus visualization practice
+
+📁 ecommerce-sql-project-sk
+│
+├── README.md                 ← Full project report (this file)
+├── ecommerce_project.sql     ← All SQL queries (Q1–Q5 + RFM)
+├── charts/
+│   ├── Picture1.png          ← Q1 – Event distribution
+│   ├── Picture2.png          ← Q2 – Conversion funnel
+│   ├── Picture3.png          ← Q3 – Top products
+│   ├── Picture4.png          ← Q4 – Brand avg price
+│   ├── Picture5.png          ← Q5 – Top revenue brands
+│   └── Picture6.png          ← RFM segmentation
+├── small_file.csv            ← (Sample data used)
+└── report.pdf                ← (Optional final PDF summary)
+
+
+
 
 
