@@ -237,4 +237,35 @@ SELECT *,
 FROM purchases
 LIMIT 100;
 
+## 🧾 Key Findings & Business Recommendations
+
+### 💡 Overall Insights
+- 🛍️ Most users engage heavily with product views but far fewer purchase → conversion funnel optimization is a major opportunity.  
+- 📱 Samsung and Apple dominate sales volume; Apple leads revenue → premium brand loyalty is strong.  
+- 🕒 Peak user activity between 02:00 – 04:00 UTC → ideal for timed promotions or flash sales.  
+- 👥 RFM segmentation shows 55 VIP customers and a healthy mid-tier of loyal buyers → strong base for retention campaigns.  
+- 💸 At-risk or inactive users (RFM ≤ 5) → target for email win-back offers or discount codes.
+
+---
+
+### 🧠 Business Recommendations
+1. **Conversion Optimization:**  
+   Simplify checkout process or highlight discounts during peak hours (03:00 UTC).
+
+2. **Loyalty & Retention:**  
+   Build a tiered rewards program for VIP and loyal segments (RFM ≥ 9).
+
+3. **Product Strategy:**  
+   Bundle top sellers (Apple + Samsung accessories) to raise average order value.
+
+4. **Re-Engagement:**  
+   Offer personalized emails or limited-time discounts to users with RFM ≤ 5.
+
+5. **Pricing Insight:**  
+   Premium brands maintain margin strength → consider maintaining price stability rather than discounting.
+
+---
+
+📈 *These findings demonstrate how SQL-driven data analysis can guide real business decisions — from marketing timing to customer retention and pricing strategy.*
+
 
