@@ -48,4 +48,151 @@ This work replicates what a junior data analyst would perform in a real-world bu
 Each question was solved using SQL and visualized in Excel for clearer business communication.
 ---
 
+## 🧹 Data & Cleaning
+
+### 📦 Dataset Details
+- **Source:** Kaggle — eCommerce Behavior Data (October 2019 sample)
+- **Size (after filtering):** 93,912 rows
+- **File Used:** `small_file.csv`
+- **Database Table:** `new_project.small_file`
+
+### 🧾 Columns Used
+| Column | Description |
+|--------|--------------|
+| event_time | Timestamp of the user action |
+| event_type | `view`, `cart`, or `purchase` |
+| product_id | Unique product identifier |
+| category_code | Product category |
+| brand | Brand name |
+| price | Product price |
+| user_id | Unique customer ID |
+| user_session | Unique session ID |
+
+---
+
+### 🧼 Cleaning Summary
+
+| Check | Finding | Action |
+|--------|----------|--------|
+| Missing `event_type` | 0 | ✅ No issue |
+| Missing `product_id` | 0 | ✅ No issue |
+| Missing `brand` | 13,509 | 🔄 Kept as “Unknown” |
+| Missing `price` | 113 | 🔄 Dropped (negligible) |
+| Unknown brands | 0 | ✅ No issue |
+
+---
+
+### 🧮 Basic Data Health
+
+| Metric | Result |
+|---------|---------|
+| Total rows | 93,912 |
+| Distinct users | 19,226 |
+| Distinct products | 19,908 |
+| Event types | View: 91,268 • Cart: 1,109 • Purchase: 1,535 |
+| Date range | 2019-10-01 00:00 → 2019-10-01 04:22 |
+| Peak activity hour | 03:00 UTC |
+
+---
+
+💡 *Why this matters:*  
+A clean dataset ensures correct insights. Dropping only 113 rows (0.12%) preserved integrity, while unknown brands were labeled as “Unknown” to maintain completeness.
+---
+
+## 📊 Analysis & SQL Queries
+
+---
+
+### 🧮 Q1. How are user events distributed? (Views, Carts, Purchases)
+
+```sql
+SELECT event_type, COUNT(*) AS total_events
+FROM new_project.small_file
+GROUP BY event_type
+ORDER BY total_events DESC;
+
+
+
+Insights
+
+Most actions are view events — typical for eCommerce browsing.
+
+Only ~1.6% of views lead to purchases → potential for funnel improvement.
+
+Marketing teams can target high-view, low-purchase categories to increase conversion.
+
+Q2. What percent of users move from viewing → cart → purchasing?
+
+SELECT 
+    (SELECT COUNT(DISTINCT user_id) FROM new_project.small_file WHERE event_type='view') AS total_views,
+    (SELECT COUNT(DISTINCT user_id) FROM new_project.small_file WHERE event_type='cart') AS total_carts,
+    (SELECT COUNT(DISTINCT user_id) FROM new_project.small_file WHERE event_type='purchase') AS total_purchases;
+
+
+
+💡 Insights
+
+View-to-cart conversion: ~1.2%
+
+Cart-to-purchase conversion: ~138% (repeat buyers or multiple items).
+
+Funnel shows where users drop off — ideal area for UX or pricing optimization.
+
+Q3. Which are the top 10 most purchased products?
+
+SELECT product_id, COUNT(*) AS purchase_count
+FROM new_project.small_file
+WHERE event_type = 'purchase'
+GROUP BY product_id
+ORDER BY purchase_count DESC
+LIMIT 10;
+
+
+💡 Insights
+
+Samsung and Apple dominate product-level sales.
+
+Product IDs like 1004856 & 1004767 are top sellers.
+
+These can be featured in ad campaigns or bundles.
+
+Q4. Which brands have the highest average selling price?
+
+SELECT brand, ROUND(AVG(price), 2) AS avg_price
+FROM new_project.small_file
+WHERE event_type = 'purchase' AND brand IS NOT NULL
+GROUP BY brand
+ORDER BY avg_price DESC
+LIMIT 10;
+
+
+
+Insights
+
+Premium brands like Mercury and Apple show high average prices.
+
+Indicates their luxury positioning in the market.
+
+Helps pricing teams understand product tier gaps.
+
+Q5. Which brands drive the most total revenue?
+
+SELECT brand, 
+       ROUND(SUM(price), 2) AS total_revenue, 
+       COUNT(*) AS total_purchases
+FROM new_project.small_file
+WHERE event_type = 'purchase' AND brand IS NOT NULL
+GROUP BY brand
+ORDER BY total_revenue DESC
+LIMIT 10;
+
+
+💡 Insights
+
+Apple generates the most total revenue (₹211,843), while Samsung leads in total purchases.
+
+Apple’s fewer but high-value transactions show strong brand power.
+
+Suggests upselling opportunities for mid-tier brands.
+
 
