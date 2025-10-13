@@ -305,6 +305,38 @@ Optional:
 │   └── Picture6.png          ← RFM segmentation
 ├── small_file.csv            ← (Sample data used)
 └── report.pdf                ← (Optional final PDF summary)
+---
+
+## 🏷️ Tools & Technologies Used
+
+| Category | Tools |
+|-----------|-------|
+| 💾 Database | MySQL 8.0 |
+| 📊 Data Visualization | Microsoft Excel |
+| 🧮 Analytics Technique | SQL Aggregations, RFM Segmentation |
+| 🧠 Concepts | Funnel Analysis, Customer Segmentation, Brand Revenue Insights |
+| 💻 Platform | GitHub, Kaggle |
+
+---
+
+## 🏆 Project Highlights
+- Designed a full **eCommerce data analytics pipeline** — from raw event logs to business insights.
+- Applied **RFM Segmentation** to categorize customers by loyalty and value.
+- Built **Excel visuals** and integrated them into GitHub for presentation.
+- Followed **real-world data cleaning, querying, and storytelling** workflow.
+
+---
+
+## 🙌 Credits
+Dataset: [Kaggle — eCommerce Behavior Data from Multi Category Store](https://www.kaggle.com/datasets/mkechinov/ecommerce-behavior-data-from-multi-category-store)
+
+Project by **SK** — aspiring Data Analyst  
+📫 **Connect:** [LinkedIn](https://www.linkedin.com) | [GitHub](https://github.com/sklaps)
+
+---
+
+💡 *Built with SQL, Excel, and endless curiosity.* ❤️
+
 
 
 
