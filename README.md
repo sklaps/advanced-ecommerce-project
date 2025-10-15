@@ -190,7 +190,7 @@ Suggests upselling opportunities for mid-tier brands.
 
 
 ---
-```
+
 ## 🧠 RFM Segmentation — Understanding Customer Value
 
 ### 🧩 What is RFM?
@@ -202,7 +202,7 @@ RFM (Recency, Frequency, Monetary) is a marketing analytics technique used to me
 It helps identify **VIPs**, **loyal customers**, and **churn risks**.
 
 ---
-```
+
 
 ### 🧮 SQL Query Used
 
@@ -232,7 +232,7 @@ SELECT *,
        ) AS rfm_score
 FROM purchases
 LIMIT 100;
-
+```
 ## 🧾 Key Findings & Business Recommendations
 
 ### 💡 Overall Insights
