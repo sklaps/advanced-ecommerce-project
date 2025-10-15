@@ -288,6 +288,7 @@ to reproduce each analysis (Q1–Q5 and RFM).
 Optional:
 5** Create a Power BI dashboard or Tableau visual for bonus visualization practice
 
+
 📁 ecommerce-sql-project-sk
 │
 ├── README.md                 ← Full project report (this file)
