@@ -113,6 +113,7 @@ GROUP BY event_type
 ORDER BY total_events DESC;
 ```
 
+![Q1 Chart](Presentation1.png)
 
 💡Insights
 Most actions are view events — typical for eCommerce browsing.
@@ -128,6 +129,7 @@ SELECT
     (SELECT COUNT(DISTINCT user_id) FROM new_project.small_file WHERE event_type='purchase') AS total_purchases;
 
 ```
+![Q2 Chart](Presentation2.png)
 
 💡Insights
 View-to-cart conversion: ~1.2%
@@ -144,13 +146,14 @@ GROUP BY product_id
 ORDER BY purchase_count DESC
 LIMIT 10;
 ```
+![Q3 Chart](Presentation3.png)
 
 💡Insights
 Samsung and Apple dominate product-level sales.
 Product IDs like 1004856 & 1004767 are top sellers.
 These can be featured in ad campaigns or bundles.
 
-Q4. Which brands have the highest average selling price?
+### Q4. Which brands have the highest average selling price?
 ```sql
 SELECT brand, ROUND(AVG(price), 2) AS avg_price
 FROM new_project.small_file
@@ -160,6 +163,7 @@ ORDER BY avg_price DESC
 LIMIT 10;
 
 ```
+![Q4 Chart](Presentation4.png)
 
 💡Insights
 Premium brands like Mercury and Apple show high average prices.
@@ -186,7 +190,7 @@ Suggests upselling opportunities for mid-tier brands.
 
 
 ---
-
+```
 ## 🧠 RFM Segmentation — Understanding Customer Value
 
 ### 🧩 What is RFM?
