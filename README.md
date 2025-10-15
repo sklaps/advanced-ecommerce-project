@@ -282,7 +282,7 @@ You can recreate this entire analysis on your own system with MySQL and Excel.
    INTO TABLE small_file
    FIELDS TERMINATED BY ','
    IGNORE 1 ROWS;
-3.** Run the SQL queries from ecommerce_project.sql
+3. Run the SQL queries from ecommerce_project.sql
 to reproduce each analysis (Q1–Q5 and RFM).
 4. **Export results to Excel and build the charts (see charts/ folder for references).
 Optional:
