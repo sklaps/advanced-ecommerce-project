@@ -197,6 +197,8 @@ Apple’s fewer but high-value transactions show strong brand power.
 Suggests upselling opportunities for mid-tier brands.
 
 
+---
+
 ## 🧠 RFM Segmentation — Understanding Customer Value
 
 ### 🧩 What is RFM?
