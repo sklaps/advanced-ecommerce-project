@@ -175,7 +175,7 @@ GROUP BY brand
 ORDER BY total_revenue DESC
 LIMIT 10;
 
-![Q1 Chart](Presentation5.pptx)
+![Q5 Chart](Presentation5.pptx)
 
 💡Insights
 Apple generates the most total revenue (₹211,843), while Samsung leads in total purchases.
