@@ -104,7 +104,7 @@ A clean dataset ensures correct insights. Dropping only 113 rows (0.12%) preserv
 ---
 ```sql
 
-### 🧮 Q1. How are user events distributed? (Views, Carts, Purchases)
+ 🧮 Q1. How are user events distributed? (Views, Carts, Purchases)
 
 
 SELECT event_type, COUNT(*) AS total_events
@@ -114,15 +114,12 @@ ORDER BY total_events DESC;
 
 
 
-Insights
-
+💡Insights
 Most actions are view events — typical for eCommerce browsing.
-
 Only ~1.6% of views lead to purchases → potential for funnel improvement.
-
 Marketing teams can target high-view, low-purchase categories to increase conversion.
 
-##  🧮 **Q2. What percent of users move from viewing → cart → purchasing?**
+  🧮 **Q2. What percent of users move from viewing → cart → purchasing?**
 
 SELECT 
     (SELECT COUNT(DISTINCT user_id) FROM new_project.small_file WHERE event_type='view') AS total_views,
@@ -131,12 +128,9 @@ SELECT
 
 
 
-💡 Insights
-
+💡Insights
 View-to-cart conversion: ~1.2%
-
 Cart-to-purchase conversion: ~138% (repeat buyers or multiple items).
-
 Funnel shows where users drop off — ideal area for UX or pricing optimization.
 
 Q3. Which are the top 10 most purchased products?
@@ -149,12 +143,9 @@ ORDER BY purchase_count DESC
 LIMIT 10;
 
 
-💡 Insights
-
+💡Insights
 Samsung and Apple dominate product-level sales.
-
 Product IDs like 1004856 & 1004767 are top sellers.
-
 These can be featured in ad campaigns or bundles.
 
 Q4. Which brands have the highest average selling price?
@@ -168,12 +159,9 @@ LIMIT 10;
 
 
 
-Insights
-
+💡Insights
 Premium brands like Mercury and Apple show high average prices.
-
 Indicates their luxury positioning in the market.
-
 Helps pricing teams understand product tier gaps.
 
 Q5. Which brands drive the most total revenue?
@@ -187,13 +175,11 @@ GROUP BY brand
 ORDER BY total_revenue DESC
 LIMIT 10;
 
+![Q1 Chart]()
 
-💡 Insights
-
+💡Insights
 Apple generates the most total revenue (₹211,843), while Samsung leads in total purchases.
-
 Apple’s fewer but high-value transactions show strong brand power.
-
 Suggests upselling opportunities for mid-tier brands.
 
 
@@ -210,6 +196,7 @@ RFM (Recency, Frequency, Monetary) is a marketing analytics technique used to me
 It helps identify **VIPs**, **loyal customers**, and **churn risks**.
 
 ---
+```
 
 ### 🧮 SQL Query Used
 
